@@ -1,0 +1,72 @@
+message StrategyPacket {  
+  enum Play {
+    /// List all plays here
+    TestPlay = 0;
+    SetPosition = 1;
+		PenaltyOur = 2;
+		PenaltyOpp = 3;
+    Stop = 4;      
+    OurGoalKick = 5;
+    OppGoalKick = 6;
+    SuperOffense = 7;
+    Offense1 = 8;
+    Offense2 = 9;
+    SuperDefense = 10;
+    Defense1 = 11;
+    Defense2 = 12;
+		PositionOurKickoff = 13;
+		PositionOppKickoff = 14;
+		Kickoff = 15;
+		PositionOurPenalty = 16;
+	  TakeGoalKick = 17;
+		PositionOurFreeKick = 18;
+		PositionOppFreeKick = 19;
+		PositionOurFreeBall = 20;
+		PositionOppFreeBall = 21;
+		PositionOppPenalty = 22;
+		PositionOurGoalKick = 23;
+		PositionOppGoalKick = 24;
+	  PositionGather = 25;
+		OppFreeBall = 26;
+		OurFreeBall = 27;
+		OppFreeKick = 28;
+		OurFreeKick = 29;
+    None = 30;
+  }
+  optional Play play = 1;
+
+  enum TacticID {
+    Block = 0;            // Defend the goal a particular distance from the goal
+    ChargeBall =1;           // Set-play tactic
+    CoverGoal =2;
+    DragToGoal =3;           //Go to the ball and start dragging the ballto goal
+    DefendLine =4;           // Defend the ball from crossing a particular line on the field
+    DefendPoint =5;          // Defend the ball from a particular point on the field
+    GoalieOur =6;            // A special tactic just for the goalie for our side
+    GoalieOpp =7;            // Grant Goalie to opponent team. only for testing purpose.
+    MarkBot =8;              // Mark an opponent preventing them from getting the ball; getting to the goal; blocking a shot
+    Pass = 9;                 // Pass to a point
+    //Kickoff = 10;
+    Position =11;             // Go to the given position
+    PositionForPenalty =12;   // Set-play tactic
+   // PositionForReceive;   // Pass Receive check
+    PositionForStart =13;     // Set-play tactic
+    ReceiveBall = 14;          // Receive Pass
+    Defend =15;              // Defend the ball from coming to our side
+    Attack =16;               // Attck the ball towards the goal      
+    Steal =17;                // Manipulate the ball to remove possession of it from another robot
+    //Stop =18;                 // Stop the bot
+    Velocity =19;             // Move at a fixed velocity
+  }
+  message Tactic {
+    required TacticID tID =1;
+    required int32 botID =2;
+  }
+  optional Tactic tactic = 2;
+
+  enum Which {
+    PLAY =1;
+    TACTIC =2;
+  }
+  required Which which = 3;
+}

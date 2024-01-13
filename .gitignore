@@ -1,0 +1,101 @@
+# C++ Files
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.o.d
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# mstest test results
+TestResults
+
+#VC Files
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Codelite files
+RobocupSSL.workspace
+RobocupSSL.workspace.*
+RobocupSSL.tags
+cppcheck.list
+*.moc.cpp
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*.pdb
+*.idb
+*.vsp
+*.psess
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+*.project
+ipch/
+obj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+
+#Project files
+[Bb]uild/
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+ 
+# Linux Temp Files
+*~
+
+# Log Files
+*.log
+
+# QT Files
+GeneratedFiles/
+
+# Project specific Files
+/sslrefbox/gamecontrol
+/sslrefbox/referee.sav
+/sslrefbox/sslrefbox
+
+/Strategy/playLexer.c
+/Strategy/playParser.c
+/Strategy/playParser.h
+/Strategy.txt
+
+# Exceptions
+!/sslvision/bin/
+!/sslvision/build/
+!/sslvision/build/app/obj/
+!/grSim/libs/*

@@ -1,0 +1,57 @@
+RobocupSSL is a Codelite workspace. It is the linux port of the entire code base for RobocupSSL developed on Windows till now.
+Currently only the project Strategy has been ported correctly to linux. To setup the workspace on your system, run the setup.sh
+file contained in the folder containing this README file. To run this file, open the terminal (Ctrl+Alt+T) and change directory
+to this directory using the cd command. Then run the following command:
+
+$ sudo bash setup.sh
+
+All the dependencies will be installed by this bash script except Codelite that has to be installed manually. The instructions 
+to install Codelite have been specified in the setup.sh file though.
+
+Once Codelite has been installed, it's time to set it up for the project:
+[1] Open Codelite. 
+[2] Codelite has git in-built. To configure it, do
+		Plugins menu -> Git -> Set Git repository path. 
+		From the browser that opens up, open the robocupssl directory and press the Open button.
+[3] Coding style has to be consistent among all the programmers involved. Configure the Source Code Formatter plugin as follows.
+    Select Plugins menu -> Source Code Formatter -> Options... .
+    Select PreDefined Styles tab -> ANSI radio box
+    Select Custom tab -> Brackets -> Linux.
+    Select Indentation -> Switches, Namespaces and Preprocessors checkboxes.
+    Select Formatting options -> Pad Operators checkbox.
+    Press OK.
+    
+    Select Settings menu -> Global Editor Preferences...
+    Select General->Indentation option
+    Deselect "Disable Smart Indentation" and "Use tabs in indentation" checkboxes. 
+    Set "Columns per indentation level" and "Columns per tab character in document" to 2. 
+    Press OK.
+     
+Once all the software is in its place, it's time to test that:
+[1] Open Codelite. 
+[2] Select Workspace menu -> Open Workspace and then select RobocupSSL.workspace from the browser that pops up.
+[3] Press F7 (shortcut for Build). The Strategy project is by default selected as the Active project. So Strategy project starts
+    building. In the Output View pane at the bottom of the IDE, see the build log in the Build tab. After the build completes, if
+    you get 0 errors, then the project has been built successfully.
+[4] From the terminal, run the command 
+    $ sudo grSim
+    Enter the system password when prompted. This will start grSim, a 3D simulator for RobocupSSL developed by another team.
+[5] Now go back to Codelite and press Ctrl+F9 (shortcut for Build and Run). This will start the Strategy project.
+    If you see only the messages: 
+    "Vision UDP network successfully configured. (Multicast address: 244.5.23.2:10002)
+    Waiting for signal from Referee Box and SSLVision Client
+    Robot command listen UDP network successfully configured. (Multicast address: 224.5.23.2:20012)",
+    then grSim has to be configured to connect to Strategy.
+    Open grSim. In the left hand side pane, set Communication->Vision multicast address to 224.5.23.2, Vision multicast port to 10002,
+    Command listen port to 20012. 
+    This should setup the communication correctly and you must be able to see a running log in the output
+    window of the Strategy project when it's run. If TEST macro has been defined in main.cpp of Strategy project, then you'll also
+    be able to see the blue bot with id 0 spinning. This will confirm that the communication is setup correctly in both directions.
+    
+====================
+= Troubleshoooting =
+====================
+If for some reason, the communication between grSim and Strategy does not seem to be working even after following the above steps, close
+both of them, start grSim first and then Strategy and double check the connection settings. That should fix any issues. If it's still not
+working contact the seniors.
+

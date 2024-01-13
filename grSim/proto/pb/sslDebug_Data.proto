@@ -1,0 +1,40 @@
+message sslDebug_Data {
+	repeated Debug_Circle circle= 1;
+	repeated Debug_Line   line  = 2;
+	repeated Debug_AdjustBot  botpos   = 3;
+	repeated Debug_AdjustBall ballpos  = 4;
+}
+
+message Debug_Circle {
+	required uint32 x=1;
+	required uint32 y=2;
+	required uint32 radius=3;
+  required uint32 color=4;
+}
+
+message Debug_Line {
+	required uint32 x1=1;
+	required uint32 y1=2;
+	required uint32 x2=3;
+	required uint32 y2=4;
+  required uint32 color=5;
+}
+
+message Debug_AdjustBot {
+	required uint32 id= 1;
+	required int32 x  = 2;
+	required int32 y  = 3;
+	required float  dir= 4;
+	required int32 vx = 5;
+	required int32 vy = 6;
+	required int32 vz = 7;
+	required uint32 team = 8;
+}
+
+message Debug_AdjustBall {
+	required int32 x  = 1;
+	required int32 y  = 2;
+	required int32 vx = 3;
+	required int32 vy = 4;
+	required int32 vz = 5;	
+}
